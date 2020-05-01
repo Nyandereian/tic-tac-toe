@@ -18,11 +18,15 @@
     opacity: 1;
     overflow-x: hidden;
     -webkit-transition: transform .7s ease, opacity .7s ease;
-    transition: transform .7s ease, opacity .7s ease;
+    transition: transform .7s ease, opacity .7 ease;
+  }
+}
 
-    @include respond-above('sm') {
-      transform: scale(0.5);
-    }
+.title-small h1 {
+  transform:  scale(1);
+
+  @include respond-above('sm') {
+    transform: scale(0.5);
   }
 }
 
