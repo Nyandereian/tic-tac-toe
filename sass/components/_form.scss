@@ -1,0 +1,80 @@
+.radio-label {
+  position: relative;
+  left: 1.5em;
+}
+
+input[name="opponent"] {
+  cursor: pointer;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  width: 0;
+
+  &:checked + .radio:before {
+    background-color: $dark-text-c;
+    transform: scale(1.1);
+  }
+
+  &:checked + .radio:after {
+    transform: scale(0.5);
+  }
+
+  &:hover + .radio:before {
+    transform: scale(0.9);
+  }
+
+  &:hover + .radio:after {
+    transform: scale(0.6);
+  }
+
+  &:checked:hover + .radio:before {
+    transform: scale(1);
+  }
+
+  &:checked:hover + .radio:after {
+    transform: scale(0.4);
+  }
+}
+
+$radio-size: calc(0.8em + 0.012 * (100vw - 20rem));
+
+.radio {
+  display: inline-block;
+  height: $radio-size;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: $radio-size;
+
+  &:after, &:before {
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: $radio-size;
+    position: absolute;
+    top: 0;
+    width: $radio-size;
+  }
+
+  &:before {
+    background-color: $light-text-c;
+    transition: background .2s ease, transform .4s cubic-bezier(.175, .885, .32, 2);
+  }
+
+  &:after {
+    background-color: $background-c;
+    transform: scale(.7);
+    transition: transform .6s cubic-bezier(.175, .885, .32, 1.4);
+  }
+}
+
+.name {
+  background-color: $background-c;
+  border: 0;
+  padding-left: calc(#{$radio-size} + 10px);
+
+  &:focus::placeholder {
+    opacity: 0.5;
+    content: "Name";
+  }
+}

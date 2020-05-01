@@ -1,0 +1,51 @@
+@mixin font-size($min-size, $modifier) {
+  font-size: calc(#{$min-size}rem + #{$modifier} * (100vw - 20rem) / 80);
+}
+
+html {
+  font-size: 16px;
+}
+
+@mixin main-font {
+  color: $light-text-c;
+  font-family: "Open Sans", sans-serif;
+}
+
+footer {
+  @include main-font;
+  @include font-size(1, 0.8);
+  font-weight: 300;
+}
+
+p {
+  @include main-font;
+  @include font-size(1, 1);
+  font-weight: 600;
+}
+
+.name, .name[attribute=value], .name::placeholder {
+  @include main-font;
+  @include font-size(1, 1);
+  color: $dark-text-c;
+  font-weight: 600;
+}
+
+.menu-button {
+  @include main-font;
+  @include font-size(1.2, 1.5);
+  font-weight: 700;
+}
+
+.results {
+  @include main-font;
+  @include font-size(2, 3);
+  color: $dark-text-c;
+  font-weight: 700;
+}
+
+.title h1 {
+  @include main-font;
+  @include font-size(2.5, 8);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}

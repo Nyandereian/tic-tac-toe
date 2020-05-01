@@ -1,0 +1,13 @@
+.menu-button {
+  background-color: $background-c;
+  border: 0;
+
+  &:hover {
+    cursor: pointer;
+    color: $dark-text-c;
+  }
+}
+
+.clicked {
+  color: $dark-text-c;
+}

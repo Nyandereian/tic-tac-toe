@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="creator" content="Lochyin Cheng">
+  <meta name="description" content="Care for a simple game of tic-tac-toe?">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="media/favicon.svg">
+  <title>Tic-Tac-Toe</title>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="wrapper2">
+      <div class="title"><h1>Tic-Tac-Toe</h1></div>
+      <div class="form-wrapper">
+        <form class="player-form">
+          <div class="players">
+            <div class="player1">
+              <input class="name" type="text" name="player-name" maxlength="10" placeholder="Player" autocomplete="off">
+            </div>
+            <div class="vs"><p>VS</p></div>
+            <div class="opponents">
+              <label class="radio-label" for="bot">
+                <input id="bot" type="radio" name="opponent" value="bot" checked>
+                <span class="radio"></span>
+                <span class="name">Bot</span>
+              </label>
+              <label class="radio-label" for="player2">
+                <input id="player2" type="radio" name="opponent" value="player2">
+                <span class="radio"></span>
+                <input class="name" name="player2-name" maxlength="10" placeholder="Player" autocomplete="off">
+              </label>
+            </div>
+          </div>
+          <div class="submit"><button class="menu-button" name="start">Start</button></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="scripts/components.js"></script>
+</html>

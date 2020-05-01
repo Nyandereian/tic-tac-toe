@@ -1,0 +1,69 @@
+.wrapper2 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+
+.title {
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  z-index: -100;
+
+  h1 {
+    margin: 0 auto;
+    margin-block-start: 0.4em;
+    transform:  scale(1);
+  }
+}
+
+.title-small {
+  top: 5%;
+  transform: translate(-50%, -50%);
+}
+
+.form-wrapper {
+  margin: calc(30% - 0.2 * (100vw - 20rem)) auto 3rem;
+  width: calc(100% - 0.05 * (100vw - 20rem));
+}
+
+.players {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: calc(4rem + 0.12 * (100vw - 20rem));
+  justify-content: space-around;
+}
+
+.name {
+  display: inline-block;
+  width: 50%;
+}
+
+.player1 {
+  position: relative;
+  left: 18%;
+}
+
+.vs {
+  position: relative;
+  z-index: 10;
+}
+
+.opponents {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  position: relative;
+  top: 0;
+}
+
+.submit {
+  margin-top: calc(15% - 0.1 * (100vw - 20rem));
+  text-align: center;
+}

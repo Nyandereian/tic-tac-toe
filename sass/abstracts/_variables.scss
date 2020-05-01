@@ -1,0 +1,24 @@
+// Colours
+$background-c: #121435;
+$light-text-c: #d9d9d9;
+$dark-text-c: #ff5722;
+
+
+// Responsiveness
+$breakpoints: (
+  "sm": ( min-width: 480px ),
+  "md": ( min-width: 768px ),
+  "lg": ( min-width: 992px ),
+  "xl": ( min-width: 1200px )
+) !default;
+
+@mixin respond-above($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    @media #{inspect($breakpoint-value)} {
+      @content;
+    }
+  } @else {
+    @warn "Invalid breakpoint: #{$breakpoint}.";
+  }
+}

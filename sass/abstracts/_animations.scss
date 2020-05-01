@@ -1,0 +1,44 @@
+@keyframes typing {
+  0% {width: 0;}
+  25% {width: calc(30% - 0.0 * (100vw - 20rem));}
+  26% {width: calc(30% - 0.0 * (100vw - 20rem));}
+  55% {width: calc(67% - 0.0 * (100vw - 20rem));}
+  56% {width: calc(67% - 0.0 * (100vw - 20rem));}
+  85% {width: calc(100% - 0.0 * (100vw - 20rem));}
+  86% {width: calc(100% - 0.0 * (100vw - 20rem));}
+  100% {width: 100%;}
+}
+
+.title {
+  -webkit-transition: top .6s ease;
+  transition: top .6s ease;
+
+  h1 {
+    animation: typing 1.8s ease-out;
+    opacity: 1;
+    overflow-x: hidden;
+    -webkit-transition: transform .7s ease, opacity .7s ease;
+    transition: transform .7s ease, opacity .7s ease;
+
+    @include respond-above('sm') {
+      transform: scale(0.5);
+    }
+  }
+}
+
+.form-wrapper {
+  opacity: 0;
+  transform: translateY(10%);
+  -webkit-transition: transform .6s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.1s, opacity .6s linear;
+  transition: transform .6s cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.1s, opacity .6s linear;
+  visibility: hidden;
+}
+
+input, .opponents, .name, .radio-label, .radio, .menu-button,  {
+    transition: all 0.3s ease;
+}
+
+.submit {
+  -webkit-transition: all .4 ease;
+  transition: all .4 ease;
+}
