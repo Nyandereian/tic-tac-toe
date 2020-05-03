@@ -25,16 +25,17 @@ Array.from(document.querySelectorAll('.name'))
        input.addEventListener('focusout', (e) => e.target.placeholder = "Player");
      });
 
-// Create smooth UX when selecting the player 2 option
+// Create smooth UX for selecting the player 2 option
 (() => {
- let radio = document.querySelector('#player2');
- let input = document.querySelector('input[name="player2-name"]');
- input.addEventListener('focus', e => radio.checked = true);
- radio.addEventListener('click', e => input.focus());
+  let radio = document.querySelector('#player2');
+  let player2 = document.querySelector('input[name="player2-name"]');
+  player2.addEventListener('focus', e => radio.checked = true);
+  radio.addEventListener('click', e => player2.focus());
 })();
 
 
 // Form handling
+let players;
 document.querySelector('.player-form').addEventListener('submit', e => {
   e.preventDefault();
   let form = e.target;
@@ -54,7 +55,7 @@ document.querySelector('.player-form').addEventListener('submit', e => {
 
   // Give default name when no input is given for user-friendliness
   let player1 = form['player-name'];
-  player1.value = player1.value || 'Player 1';
+  let player1Name = player1.value = player1.value || 'Player 1';
 
   // Check selected opponent and remove the other to get a vs screen
   // Adjust top / bottom for horizontal text alignment
@@ -63,12 +64,13 @@ document.querySelector('.player-form').addEventListener('submit', e => {
   let player2 = form['player2-name'];
   let bot = form['bot'];
   if(player2Radio.checked) {
-    player2.value = player2.value || 'Player 2';
+    var opponentName = player2.value = player2.value || 'Player 2';
     opponents.style.top = 'calc(-1 * (1.25rem + 0.049 * (100vw - 20rem)))';
     bot.parentNode.style.opacity = '0';
     var unchecked = bot.parentNode;
     var checked = player2;
   } else {
+    var opponentName = document.querySelector('label[for="bot"] .name').textContent;
     player2.parentNode.style.opacity = '0';
     opponents.style.top = 'calc(1.36rem + 0.052 * (100vw - 20rem))';
     var unchecked = player2.parentNode;
@@ -95,6 +97,14 @@ document.querySelector('.player-form').addEventListener('submit', e => {
     form.parentNode.style.opacity = '0';
     form.parentNode.style.transform = 'translateY(-20%) scale(0.8)';
   }, 700);
-})
+
+  // Make place for gameboard screen
+  setTimeout(() => {
+    title.parentNode.style.display = 'none';
+    form.parentNode.style.display = 'none';
+  }, 1400);
+
+  players = {player1Name, opponentName};
+});
 
 // TODO: input values must be returned!!!
