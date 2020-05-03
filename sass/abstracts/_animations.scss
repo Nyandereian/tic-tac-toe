@@ -1,3 +1,14 @@
+@-webkit-keyframes typing {
+  0% {width: 0;}
+  25% {width: calc(30% - 0.0 * (100vw - 20rem));}
+  26% {width: calc(30% - 0.0 * (100vw - 20rem));}
+  55% {width: calc(67% - 0.0 * (100vw - 20rem));}
+  56% {width: calc(67% - 0.0 * (100vw - 20rem));}
+  85% {width: calc(100% - 0.0 * (100vw - 20rem));}
+  86% {width: calc(100% - 0.0 * (100vw - 20rem));}
+  100% {width: 100%;}
+}
+
 @keyframes typing {
   0% {width: 0;}
   25% {width: calc(30% - 0.0 * (100vw - 20rem));}
@@ -14,6 +25,7 @@
   transition: top .6s ease;
 
   h1 {
+    -webkit-animation: typing 1.8s ease-out;
     animation: typing 1.8s ease-out;
     opacity: 1;
     overflow-x: hidden;
@@ -39,6 +51,7 @@
 }
 
 input, .opponents, .name, .radio-label, .radio, .menu-button,  {
+  -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
 
