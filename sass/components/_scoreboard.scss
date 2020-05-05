@@ -1,0 +1,62 @@
+.scoreboard-up {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.scoreboard-names {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 calc(0.5rem + 0.02 * (100vw - 20rem));
+
+  & > div {
+    padding: 0 calc(0.25rem + 0.01 * (100vw - 20rem));
+  }
+}
+
+.scoreboard-name {
+  flex-grow: 1;
+  flex-basis: 5rem;
+  min-width: calc(5.5em + 0.1 * (100vw - 20rem));
+  overflow-x: hidden;
+  white-space: nowrap;
+
+  p {
+    display: inline-block;
+  }
+}
+
+.line {
+  align-self: center;
+  background-color: $light-text-c;
+  flex-basis: 0;
+  height: 3px;
+}
+
+.scoreboard-name-1 {
+  text-align: center;
+}
+
+.scoreboard-name-2 {
+  text-align: center;
+}
+
+.scoreboard-down {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  & > p {
+    margin-block-end: 0;
+    margin-block-start: 0;
+  }
+}
+
+.scoreboard-points {
+  min-width: 2em;
+}
+
+.colon {
+  margin: 0 0.5rem;
+}

@@ -69,7 +69,7 @@ $radio-size: calc(0.8em + 0.012 * (100vw - 20rem));
 }
 
 .name {
-  background-color: $background-c;
+  background-color: transparent;
   border: 0;
   padding-left: calc(#{$radio-size} + 10px);
 

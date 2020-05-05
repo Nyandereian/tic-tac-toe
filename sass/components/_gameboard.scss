@@ -1,0 +1,35 @@
+$border-width: calc(7px + 0.005 * (100vw - 20rem));
+$grid-border: $border-width solid $dark-text-c;
+
+.gameboard table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  height: 33%;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 33%;
+
+  td {
+    box-sizing: content-box;
+  }
+
+  tr:first-child, tr:last-child {
+    height: 0;
+  }
+
+  td:first-child, td:last-child {
+      width: 0;
+  }
+
+  tr:nth-child(2) {
+    border-bottom: $grid-border;
+    border-top: $grid-border;
+  }
+
+  td:nth-child(2) {
+    border-left: $grid-border;
+    border-right: $grid-border;
+  }
+}

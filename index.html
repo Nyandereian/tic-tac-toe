@@ -12,6 +12,33 @@
 </head>
 <body>
   <div class="wrapper">
+    <div class="background">
+      <div class="background-top"><p>TIC</p></div>
+      <div class="background-middle"><p>TAC</p></div>
+      <div class="background-bottom"><p>TOE</p></div>
+    </div>
+    <div class="scoreboard">
+      <div class="scoreboard-up">
+        <div class="line left"></div>
+        <div class="scoreboard-names">
+          <div class="scoreboard-name scoreboard-name-1">
+            <p></p>
+            <p class="sign"></p>
+          </div>
+          <div class="vs"><p>vs</p></div>
+          <div class="scoreboard-name scoreboard-name-2">
+            <p></p>
+            <p class="sign"></p>
+          </div>
+        </div>
+        <div class="line right"></div>
+      </div>
+      <div class="scoreboard-down">
+        <p class="scoreboard-points player1-points">0</p>
+        <p class="colon">:</p>
+        <p class="scoreboard-points player2-points">0</p>
+      </div>
+    </div>
     <div class="wrapper2">
       <div class="title"><h1>Tic-Tac-Toe</h1></div>
       <div class="form-wrapper">
@@ -37,7 +64,39 @@
           <div class="submit"><button class="menu-button" name="start">Start</button></div>
         </form>
       </div>
+      <div class="gameboard">
+        <table>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="endscreen">
+        <div class="results">
+          <p>Player 1 Wins!</p>
+        </div>
+        <div class="endbuttons">
+          <button class="menu-button restart">Restart</button>
+        </div>
+      </div>
     </div>
+    <footer class="footer">
+      <p class="credits">Created by Lochyin Cheng</p>
+    </footer>
   </div>
 </body>
 <script src="scripts/components.js"></script>

@@ -25,13 +25,16 @@
   transition: top .6s ease;
 
   h1 {
-    -webkit-animation: typing 1.8s ease-out;
-    animation: typing 1.8s ease-out;
     opacity: 1;
     overflow-x: hidden;
     -webkit-transition: transform .7s ease, opacity .7s ease;
     transition: transform .7s ease, opacity .7 ease;
   }
+}
+
+.typing-animation {
+  -webkit-animation: typing 1.8s ease-out;
+  animation: typing 1.8s ease-out;
 }
 
 .title-small h1 {
@@ -58,4 +61,66 @@ input, .opponents, .name, .radio-label, .radio, .menu-button,  {
 .submit {
   -webkit-transition: all .4 ease;
   transition: all .4 ease;
+}
+
+.background {
+  opacity: 0;
+  -webkit-transition: opacity .4s ease;
+  transition: opacity .4s ease;
+}
+
+.footer {
+  opacity: 0;
+  -webkit-transition: opacity .6s ease 2.2s;
+  transition: opacity .6s ease 2.2s;
+}
+
+.scoreboard-up {
+  opacity: 0;
+  transform: translateY(50%);
+  -webkit-transition: transform 1s ease-out 0.6s, opacity 1s linear 0.6s;
+  transition: transform 1s ease-out 0.6s, opacity 1s linear 0.6s;
+}
+
+.scoreboard-down {
+  opacity: 0;
+  transform: translateY(50%);
+  -webkit-transition: transform .4s ease-out 1.4s, opacity .6s linear 1.4s;
+  transition: transform .4s ease-out 1.4s, opacity .6s linear 1.4s;
+}
+
+.line {
+  flex-grow: 0.00001;
+  -webkit-transition: flex-grow 1s ease-in-out 1.2s;
+  transition: flex-grow 1s ease-in-out 1.2s;
+}
+
+.gameboard {
+  opacity: 0;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.gameboard table {
+  -webkit-transition: all .4s linear;
+  transition: all .4s linear;
+}
+
+.gameboard td, .gameboard tr {
+  -webkit-transition: all .4s linear;
+  transition: all .4s linear;
+}
+
+.results {
+  transform: translateY(-50%);
+}
+
+.endbuttons {
+  transform: translateY(50%);
+}
+
+.results, .endbuttons {
+  opacity: 0;
+  -webkit-transition: all .6s ease-in-out;
+  transition: all .6s ease-in-out;
 }

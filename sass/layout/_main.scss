@@ -1,0 +1,52 @@
+.background {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(150vw - 0.55 * (100vw - 20rem));
+  z-index: -100;
+
+  p {
+    margin: 0;
+  }
+}
+
+.background-top {text-align: left;}
+.background-middle {text-align: center;}
+.background-bottom {text-align: right;}
+
+.scoreboard {
+  text-align: center;
+}
+
+.gameboard {
+  display: none;
+  height: calc(60vw - 0.45 * (100vw - 20rem));
+  margin: 0 auto;
+  position: relative;
+  width: calc(60vw - 0.45 * (100vw - 20rem));
+}
+
+.endscreen {
+  display: none;
+  text-align: center;
+}
+
+.endbuttons {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  width: calc(50vw - 0.2 * (100vw - 20rem));
+
+  & > button {
+    min-width: 5rem;
+  }
+}
+
+.footer {
+  bottom: 0;
+  padding-bottom: 1rem;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+}

@@ -2,7 +2,7 @@
 A visually appealing game of tic-tac-toe. Names are optional, the bot unbeatable.
 
 #TODO
-- Vendor prefixes: transition css, transitionend js
+- Vendor prefixes: transition css, transitionend js, animation css, flexbox, etc.
 
 
 #Small issues

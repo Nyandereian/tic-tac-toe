@@ -61,12 +61,14 @@
   -webkit-transition: top .6s ease;
   transition: top .6s ease; }
   .title h1 {
-    -webkit-animation: typing 1.8s ease-out;
-    animation: typing 1.8s ease-out;
     opacity: 1;
     overflow-x: hidden;
     -webkit-transition: transform .7s ease, opacity .7s ease;
     transition: transform .7s ease, opacity .7 ease; }
+
+.typing-animation {
+  -webkit-animation: typing 1.8s ease-out;
+  animation: typing 1.8s ease-out; }
 
 .title-small h1 {
   transform: scale(1); }
@@ -88,6 +90,57 @@ input, .opponents, .name, .radio-label, .radio, .menu-button {
 .submit {
   -webkit-transition: all .4 ease;
   transition: all .4 ease; }
+
+.background {
+  opacity: 0;
+  -webkit-transition: opacity .4s ease;
+  transition: opacity .4s ease; }
+
+.footer {
+  opacity: 0;
+  -webkit-transition: opacity .6s ease 2.2s;
+  transition: opacity .6s ease 2.2s; }
+
+.scoreboard-up {
+  opacity: 0;
+  transform: translateY(50%);
+  -webkit-transition: transform 1s ease-out 0.6s, opacity 1s linear 0.6s;
+  transition: transform 1s ease-out 0.6s, opacity 1s linear 0.6s; }
+
+.scoreboard-down {
+  opacity: 0;
+  transform: translateY(50%);
+  -webkit-transition: transform .4s ease-out 1.4s, opacity .6s linear 1.4s;
+  transition: transform .4s ease-out 1.4s, opacity .6s linear 1.4s; }
+
+.line {
+  flex-grow: 0.00001;
+  -webkit-transition: flex-grow 1s ease-in-out 1.2s;
+  transition: flex-grow 1s ease-in-out 1.2s; }
+
+.gameboard {
+  opacity: 0;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out; }
+
+.gameboard table {
+  -webkit-transition: all .4s linear;
+  transition: all .4s linear; }
+
+.gameboard td, .gameboard tr {
+  -webkit-transition: all .4s linear;
+  transition: all .4s linear; }
+
+.results {
+  transform: translateY(-50%); }
+
+.endbuttons {
+  transform: translateY(50%); }
+
+.results, .endbuttons {
+  opacity: 0;
+  -webkit-transition: all .6s ease-in-out;
+  transition: all .6s ease-in-out; }
 
 html {
   box-sizing: border-box; }
@@ -123,12 +176,6 @@ body {
 html {
   font-size: 16px; }
 
-footer {
-  color: #d9d9d9;
-  font-family: "Open Sans", sans-serif;
-  font-size: calc(1rem + 0.8 * (100vw - 20rem) / 80);
-  font-weight: 300; }
-
 p {
   color: #d9d9d9;
   font-family: "Open Sans", sans-serif;
@@ -148,7 +195,7 @@ p {
   font-size: calc(1.2rem + 1.5 * (100vw - 20rem) / 80);
   font-weight: 700; }
 
-.results {
+.results p {
   color: #d9d9d9;
   font-family: "Open Sans", sans-serif;
   font-size: calc(2rem + 3 * (100vw - 20rem) / 80);
@@ -161,6 +208,67 @@ p {
   font-size: calc(2.5rem + 8 * (100vw - 20rem) / 80);
   font-weight: 700;
   letter-spacing: 0.1em; }
+
+.background p {
+  color: #d9d9d9;
+  font-family: "Open Sans", sans-serif;
+  font-size: calc(10rem + 10 * (100vw - 20rem) / 80);
+  font-weight: 800;
+  line-height: 100%; }
+
+.footer p {
+  color: #d9d9d9;
+  font-family: "Open Sans", sans-serif;
+  font-size: calc(0.7rem + 0.5 * (100vw - 20rem) / 80);
+  font-weight: 300; }
+
+.background {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(150vw - 0.55 * (100vw - 20rem));
+  z-index: -100; }
+  .background p {
+    margin: 0; }
+
+.background-top {
+  text-align: left; }
+
+.background-middle {
+  text-align: center; }
+
+.background-bottom {
+  text-align: right; }
+
+.scoreboard {
+  text-align: center; }
+
+.gameboard {
+  display: none;
+  height: calc(60vw - 0.45 * (100vw - 20rem));
+  margin: 0 auto;
+  position: relative;
+  width: calc(60vw - 0.45 * (100vw - 20rem)); }
+
+.endscreen {
+  display: none;
+  text-align: center; }
+
+.endbuttons {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  width: calc(50vw - 0.2 * (100vw - 20rem)); }
+  .endbuttons > button {
+    min-width: 5rem; }
+
+.footer {
+  bottom: 0;
+  padding-bottom: 1rem;
+  position: fixed;
+  text-align: center;
+  width: 100%; }
 
 .wrapper2 {
   position: absolute;
@@ -220,7 +328,7 @@ p {
   text-align: center; }
 
 .menu-button {
-  background-color: #121435;
+  background-color: transparent;
   border: 0; }
   .menu-button:hover {
     cursor: pointer;
@@ -228,6 +336,76 @@ p {
 
 .clicked {
   color: #ff5722; }
+
+.gameboard table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  height: 33%;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 33%; }
+  .gameboard table td {
+    box-sizing: content-box; }
+  .gameboard table tr:first-child, .gameboard table tr:last-child {
+    height: 0; }
+  .gameboard table td:first-child, .gameboard table td:last-child {
+    width: 0; }
+  .gameboard table tr:nth-child(2) {
+    border-bottom: calc(7px + 0.005 * (100vw - 20rem)) solid #ff5722;
+    border-top: calc(7px + 0.005 * (100vw - 20rem)) solid #ff5722; }
+  .gameboard table td:nth-child(2) {
+    border-left: calc(7px + 0.005 * (100vw - 20rem)) solid #ff5722;
+    border-right: calc(7px + 0.005 * (100vw - 20rem)) solid #ff5722; }
+
+.scoreboard-up {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; }
+
+.scoreboard-names {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 calc(0.5rem + 0.02 * (100vw - 20rem)); }
+  .scoreboard-names > div {
+    padding: 0 calc(0.25rem + 0.01 * (100vw - 20rem)); }
+
+.scoreboard-name {
+  flex-grow: 1;
+  flex-basis: 5rem;
+  min-width: calc(5.5em + 0.1 * (100vw - 20rem));
+  overflow-x: hidden;
+  white-space: nowrap; }
+  .scoreboard-name p {
+    display: inline-block; }
+
+.line {
+  align-self: center;
+  background-color: #d9d9d9;
+  flex-basis: 0;
+  height: 3px; }
+
+.scoreboard-name-1 {
+  text-align: center; }
+
+.scoreboard-name-2 {
+  text-align: center; }
+
+.scoreboard-down {
+  align-items: center;
+  display: flex;
+  justify-content: center; }
+  .scoreboard-down > p {
+    margin-block-end: 0;
+    margin-block-start: 0; }
+
+.scoreboard-points {
+  min-width: 2em; }
+
+.colon {
+  margin: 0 0.5rem; }
 
 .radio-label {
   position: relative;
@@ -277,7 +455,7 @@ input[name="opponent"] {
     transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.4); }
 
 .name {
-  background-color: #121435;
+  background-color: transparent;
   border: 0;
   padding-left: calc(calc(0.8em + 0.012 * (100vw - 20rem)) + 10px); }
   .name:focus::placeholder {
