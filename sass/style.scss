@@ -1,6 +1,5 @@
 @import 'abstracts/variables';
 @import 'abstracts/fonts';
-@import 'abstracts/animations';
 
 @import 'base/normalize';
 @import 'base/reset';
@@ -14,3 +13,5 @@
 @import 'components/gameboard';
 @import 'components/scoreboard';
 @import 'components/form';
+
+@import 'abstracts/animations';

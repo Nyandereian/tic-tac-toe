@@ -23,125 +23,6 @@
   font-style: normal;
   font-weight: 800;
   src: url("fonts/OpenSans-ExtraBold.ttf") format("truetype"); }
-@-webkit-keyframes typing {
-  0% {
-    width: 0; }
-  25% {
-    width: calc(30% - 0.0 * (100vw - 20rem)); }
-  26% {
-    width: calc(30% - 0.0 * (100vw - 20rem)); }
-  55% {
-    width: calc(67% - 0.0 * (100vw - 20rem)); }
-  56% {
-    width: calc(67% - 0.0 * (100vw - 20rem)); }
-  85% {
-    width: calc(100% - 0.0 * (100vw - 20rem)); }
-  86% {
-    width: calc(100% - 0.0 * (100vw - 20rem)); }
-  100% {
-    width: 100%; } }
-@keyframes typing {
-  0% {
-    width: 0; }
-  25% {
-    width: calc(30% - 0.0 * (100vw - 20rem)); }
-  26% {
-    width: calc(30% - 0.0 * (100vw - 20rem)); }
-  55% {
-    width: calc(67% - 0.0 * (100vw - 20rem)); }
-  56% {
-    width: calc(67% - 0.0 * (100vw - 20rem)); }
-  85% {
-    width: calc(100% - 0.0 * (100vw - 20rem)); }
-  86% {
-    width: calc(100% - 0.0 * (100vw - 20rem)); }
-  100% {
-    width: 100%; } }
-.title {
-  -webkit-transition: top .6s ease;
-  transition: top .6s ease; }
-  .title h1 {
-    opacity: 1;
-    overflow-x: hidden;
-    -webkit-transition: transform .7s ease, opacity .7s ease;
-    transition: transform .7s ease, opacity .7 ease; }
-
-.typing-animation {
-  -webkit-animation: typing 1.8s ease-out;
-  animation: typing 1.8s ease-out; }
-
-.title-small h1 {
-  transform: scale(1); }
-  @media (min-width: 480px) {
-    .title-small h1 {
-      transform: scale(0.5); } }
-
-.form-wrapper {
-  opacity: 0;
-  transform: translateY(10%);
-  -webkit-transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s, opacity 0.6s linear;
-  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s, opacity 0.6s linear;
-  visibility: hidden; }
-
-input, .opponents, .name, .radio-label, .radio, .menu-button {
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease; }
-
-.submit {
-  -webkit-transition: all .4 ease;
-  transition: all .4 ease; }
-
-.background {
-  opacity: 0;
-  -webkit-transition: opacity .4s ease;
-  transition: opacity .4s ease; }
-
-.footer {
-  opacity: 0;
-  -webkit-transition: opacity .6s ease 2.2s;
-  transition: opacity .6s ease 2.2s; }
-
-.scoreboard-up {
-  opacity: 0;
-  transform: translateY(50%);
-  -webkit-transition: transform 1s ease-out 0.6s, opacity 1s linear 0.6s;
-  transition: transform 1s ease-out 0.6s, opacity 1s linear 0.6s; }
-
-.scoreboard-down {
-  opacity: 0;
-  transform: translateY(50%);
-  -webkit-transition: transform .4s ease-out 1.4s, opacity .6s linear 1.4s;
-  transition: transform .4s ease-out 1.4s, opacity .6s linear 1.4s; }
-
-.line {
-  flex-grow: 0.00001;
-  -webkit-transition: flex-grow 1s ease-in-out 1.2s;
-  transition: flex-grow 1s ease-in-out 1.2s; }
-
-.gameboard {
-  opacity: 0;
-  -webkit-transition: all .4s ease-in-out;
-  transition: all .4s ease-in-out; }
-
-.gameboard table {
-  -webkit-transition: all .4s linear;
-  transition: all .4s linear; }
-
-.gameboard td, .gameboard tr {
-  -webkit-transition: all .4s linear;
-  transition: all .4s linear; }
-
-.results {
-  transform: translateY(-50%); }
-
-.endbuttons {
-  transform: translateY(50%); }
-
-.results, .endbuttons {
-  opacity: 0;
-  -webkit-transition: all .6s ease-in-out;
-  transition: all .6s ease-in-out; }
-
 html {
   box-sizing: border-box; }
 
@@ -461,5 +342,124 @@ input[name="opponent"] {
   .name:focus::placeholder {
     opacity: 0.5;
     content: "Name"; }
+
+@-webkit-keyframes typing {
+  0% {
+    width: 0; }
+  25% {
+    width: calc(30% - 0.0 * (100vw - 20rem)); }
+  26% {
+    width: calc(30% - 0.0 * (100vw - 20rem)); }
+  55% {
+    width: calc(67% - 0.0 * (100vw - 20rem)); }
+  56% {
+    width: calc(67% - 0.0 * (100vw - 20rem)); }
+  85% {
+    width: calc(100% - 0.0 * (100vw - 20rem)); }
+  86% {
+    width: calc(100% - 0.0 * (100vw - 20rem)); }
+  100% {
+    width: 100%; } }
+@keyframes typing {
+  0% {
+    width: 0; }
+  25% {
+    width: calc(30% - 0.0 * (100vw - 20rem)); }
+  26% {
+    width: calc(30% - 0.0 * (100vw - 20rem)); }
+  55% {
+    width: calc(67% - 0.0 * (100vw - 20rem)); }
+  56% {
+    width: calc(67% - 0.0 * (100vw - 20rem)); }
+  85% {
+    width: calc(100% - 0.0 * (100vw - 20rem)); }
+  86% {
+    width: calc(100% - 0.0 * (100vw - 20rem)); }
+  100% {
+    width: 100%; } }
+.title {
+  -webkit-transition: top .6s ease;
+  transition: top .6s ease; }
+  .title h1 {
+    opacity: 1;
+    overflow-x: hidden;
+    -webkit-transition: transform .7s ease, opacity .7s ease;
+    transition: transform .7s ease, opacity .7 ease; }
+
+.typing-animation {
+  -webkit-animation: typing 1.8s ease-out;
+  animation: typing 1.8s ease-out; }
+
+.title-small h1 {
+  transform: scale(1); }
+  @media (min-width: 480px) {
+    .title-small h1 {
+      transform: scale(0.5); } }
+
+.form-wrapper {
+  opacity: 0;
+  transform: translateY(10%);
+  -webkit-transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s, opacity 0.6s linear;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s, opacity 0.6s linear;
+  visibility: hidden; }
+
+input, .opponents, .name, .radio-label, .radio, .menu-button {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+
+.submit {
+  -webkit-transition: all .4 ease;
+  transition: all .4 ease; }
+
+.background {
+  opacity: 0;
+  -webkit-transition: opacity .4s ease;
+  transition: opacity .4s ease; }
+
+.footer {
+  opacity: 0;
+  -webkit-transition: opacity .6s ease 2.2s;
+  transition: opacity .6s ease 2.2s; }
+
+.scoreboard-up {
+  opacity: 0;
+  transform: translateY(50%);
+  -webkit-transition: transform 1s ease-out 0.6s, opacity 1s linear 0.6s;
+  transition: transform 1s ease-out 0.6s, opacity 1s linear 0.6s; }
+
+.scoreboard-down {
+  opacity: 0;
+  transform: translateY(50%);
+  -webkit-transition: transform .4s ease-out 1.4s, opacity .6s linear 1.4s;
+  transition: transform .4s ease-out 1.4s, opacity .6s linear 1.4s; }
+
+.line {
+  flex-grow: 0.00001;
+  -webkit-transition: flex-grow 1s ease-in-out 1.2s;
+  transition: flex-grow 1s ease-in-out 1.2s; }
+
+.gameboard {
+  opacity: 0;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out; }
+
+.gameboard table {
+  -webkit-transition: all .4s linear;
+  transition: all .4s linear; }
+
+.gameboard td, .gameboard tr {
+  -webkit-transition: all .4s linear;
+  transition: all .4s linear; }
+
+.results {
+  transform: translateY(-50%); }
+
+.endbuttons {
+  transform: translateY(50%); }
+
+.results, .endbuttons {
+  opacity: 0;
+  -webkit-transition: all .6s ease-in-out;
+  transition: all .6s ease-in-out; }
 
 /*# sourceMappingURL=style.css.map */
