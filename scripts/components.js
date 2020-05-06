@@ -15,7 +15,7 @@
   // Autofocus on player 1 name input for an efficient flow
   title.parentNode.addEventListener('webkitTransitionEnd', e => {
     setTimeout(() => form.firstElementChild[name="player-name"].focus(), 300);
-  })
+  });
 
   configForm();
 })();
