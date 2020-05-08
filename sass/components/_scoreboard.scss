@@ -23,8 +23,13 @@
   white-space: nowrap;
 
   p {
+    border-bottom: 1px solid rgba(217,217,217,0);
     display: inline-block;
   }
+}
+
+p.turn {
+  border-bottom: 1px solid rgba(217,217,217,1);
 }
 
 .line {

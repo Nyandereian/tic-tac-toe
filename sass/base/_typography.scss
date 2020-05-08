@@ -17,6 +17,12 @@ p {
   font-weight: 600;
 }
 
+td {
+  @include main-font;
+  @include font-size(3, 2);
+  font-weight: 600;
+}
+
 .name, .name[attribute=value], .name::placeholder {
   @include main-font;
   @include font-size(1, 1);

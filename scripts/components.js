@@ -72,13 +72,22 @@ function playerSelectionHandler(form) {
     bot.parentNode.style.opacity = '0';
     var unchecked = bot.parentNode;
     var checked = player2;
+    var isBot = false;
   } else {
     var opponentName = document.querySelector('label[for="bot"] .name').textContent;
     player2.parentNode.style.opacity = '0';
     opponents.style.top = 'calc(1.36rem + 0.052 * (100vw - 20rem))';
     var unchecked = player2.parentNode;
     var checked = bot.parentNode.querySelector('.name');
+    var isBot = true;
   }
+
+  // set player names to objects;
+  p1.setName(player1Name);
+  p2.setName(opponentName);
+
+  // set bootmatch or pvp
+  GB.setBotMatch(isBot);
 
   // Set player names in scoreboard
   document.querySelector('.scoreboard-name-1 p').textContent = player1Name;
@@ -118,7 +127,7 @@ document.querySelector('.player-form').addEventListener('submit', e => {
   removeFormButtons(form);
   playerSelectionHandler(form);
   fadeOutForm(form);
-  assignSigns();
+  GB.assignSigns();
 
   // Enter gameboard screen
   setTimeout(() => {
@@ -126,7 +135,7 @@ document.querySelector('.player-form').addEventListener('submit', e => {
   }, 1400);
 
   setTimeout(() => {
-    setBoard();
+    GB.set();
   }, 4200);
 });
 
@@ -136,7 +145,6 @@ function setMainScreen() {
   let bg = document.querySelector('.background');
   let footer = document.querySelector('.footer');
   let lines = Array.from(document.querySelectorAll('.line'));
-  let gameboard = document.querySelector('.gameboard');
 
   bg.style.opacity = 0.05;
   scoreboardUp.style.opacity = 1;
@@ -147,87 +155,10 @@ function setMainScreen() {
   footer.style.opacity = 0.5;
 }
 
-function setBoard() {
-  let gameboard = document.querySelector('.gameboard');
-  gameboard.style.display = 'grid';
-
-  let table = gameboard.querySelector('table');
-  let rows = Array.from(table.querySelectorAll('tr'));
-  let cells = Array.from(table.querySelectorAll('td'));
-  setTimeout(() => {
-    gameboard.style.opacity = 1;
-    table.style.height = '100%';
-    table.style.width = '100%';
-    rows.forEach(row => row.style.height = '30%');
-    cells.forEach(cell => cell.style.width = '30%');
-  }, 100);
-}
-
-function assignSigns() {
-  let signs = ['O', 'X'];
-  let p1Sign = document.querySelector('.scoreboard-name-1 .sign');
-  let p2Sign = document.querySelector('.scoreboard-name-2 .sign');
-  p1Sign.textContent = `(${signs[Math.floor(Math.random() * 2)]})`;
-  p2Sign.textContent = (p1Sign.textContent == '(O)') ? '(X)' : '(O)';
-}
-
-function showResults() {
-  let gameboard = document.querySelector('.gameboard');
-  gameboard.style.opacity = 0;
-  gameboard.style.transform = 'scale(0.7)';
-
-  let endScreen = document.querySelector('.endscreen');
-  setTimeout(() => {
-    gameboard.style.display = 'none';
-    endScreen.style.display = 'block';
-  }, 400);
-
-  let results = document.querySelector('.results');
-  let buttons = document.querySelector('.endbuttons');
-  setTimeout(() => {
-    results.style.opacity = 1;
-    results.style.transform = "translateY(0)";
-    buttons.style.opacity = 1;
-    buttons.style.transform = "translateY(0)";
-
-    resetGameboard(gameboard);
-  }, 500);
-
-  buttons.addEventListener('click', e => restart());
-}
-
-function removeEndScreen() {
-  let endScreen = document.querySelector('.endscreen');
-  let results = document.querySelector('.results');
-  let buttons = document.querySelector('.endbuttons');
-
-  results.style.opacity = 0;
-  buttons.style.opacity = 0;
-
-  setTimeout(() => {
-    results.removeAttribute('style');
-    buttons.removeAttribute('style');
-    endScreen.removeAttribute('style');
-  }, 600);
-}
-
-function resetGameboard(gameboard) {
-  gameboard.removeAttribute('style');
-
-  let table = gameboard.querySelector('table');
-  table.removeAttribute('style');
-
-  let rows = Array.from(table.querySelectorAll('tr'));
-  rows.forEach(row => row.removeAttribute('style'));
-
-  let cells = Array.from(table.querySelectorAll('td'));
-  cells.forEach(cell => cell.removeAttribute('style'));
-}
-
 function restart() {
-  removeEndScreen();
-  assignSigns();
+  GB.removeResults();
+  GB.assignSigns();
   setTimeout(() => {
-    setBoard();
+    GB.set();
   }, 600);
 }

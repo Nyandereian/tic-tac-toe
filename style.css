@@ -63,6 +63,12 @@ p {
   font-size: calc(1rem + 1 * (100vw - 20rem) / 80);
   font-weight: 600; }
 
+td {
+  color: #d9d9d9;
+  font-family: "Open Sans", sans-serif;
+  font-size: calc(3rem + 2 * (100vw - 20rem) / 80);
+  font-weight: 600; }
+
 .name, .name[attribute=value], .name::placeholder {
   color: #d9d9d9;
   font-family: "Open Sans", sans-serif;
@@ -228,7 +234,18 @@ p {
   transform: translate(-50%, -50%);
   width: 33%; }
   .gameboard table td {
-    box-sizing: content-box; }
+    color: rgba(217, 217, 217, 0);
+    box-sizing: content-box;
+    line-height: 30%;
+    text-align: center; }
+    .gameboard table td:hover {
+      color: rgba(217, 217, 217, 0.5);
+      cursor: pointer; }
+    .gameboard table td.placed {
+      color: #d9d9d9; }
+      .gameboard table td.placed:hover {
+        color: #d9d9d9;
+        cursor: default; }
   .gameboard table tr:first-child, .gameboard table tr:last-child {
     height: 0; }
   .gameboard table td:first-child, .gameboard table td:last-child {
@@ -239,6 +256,43 @@ p {
   .gameboard table td:nth-child(2) {
     border-left: calc(7px + 0.005 * (100vw - 20rem)) solid #ff5722;
     border-right: calc(7px + 0.005 * (100vw - 20rem)) solid #ff5722; }
+
+.win-line {
+  background-color: #d9d9d9;
+  height: calc(5px + 0.002 * (100vw - 20rem));
+  position: absolute;
+  transform-origin: top left;
+  width: 0; }
+  .win-line[class*='r'] {
+    left: -5%;
+    width: 110%; }
+  .win-line.r1 {
+    top: calc(100% / 6 - ((5px + 0.002 * (100vw - 20rem)) / 2)); }
+  .win-line.r2 {
+    margin-top: calc((5px + 0.002 * (100vw - 20rem)) / -4);
+    top: 50%; }
+  .win-line.r3 {
+    bottom: calc(100% / 6 - (5px + 0.002 * (100vw - 20rem))); }
+  .win-line[class*='c'] {
+    top: -5%;
+    transform: rotate(90deg);
+    width: 110%; }
+  .win-line.c1 {
+    left: calc(100% / 6); }
+  .win-line.c2 {
+    left: 50%;
+    margin-left: calc((5px + 0.002 * (100vw - 20rem)) / 2); }
+  .win-line.c3 {
+    left: calc(100% / 6 * 5 + (5px + 0.002 * (100vw - 20rem))); }
+  .win-line[class*='d'] {
+    left: -1%;
+    width: 144.25%; }
+  .win-line.dltr {
+    top: -1%;
+    transform: rotate(45deg); }
+  .win-line.drtl {
+    bottom: -1%;
+    transform: rotate(-45deg); }
 
 .scoreboard-up {
   display: flex;
@@ -260,7 +314,11 @@ p {
   overflow-x: hidden;
   white-space: nowrap; }
   .scoreboard-name p {
+    border-bottom: 1px solid rgba(217, 217, 217, 0);
     display: inline-block; }
+
+p.turn {
+  border-bottom: 1px solid #d9d9d9; }
 
 .line {
   align-self: center;
@@ -427,6 +485,10 @@ input, .opponents, .name, .radio-label, .radio, .menu-button {
   -webkit-transition: transform 1s ease-out 0.6s, opacity 1s linear 0.6s;
   transition: transform 1s ease-out 0.6s, opacity 1s linear 0.6s; }
 
+.scoreboard-name p {
+  -webkit-transition: border-bottom 0.4s ease-out;
+  transition: border-bottom 0.4s ease-out; }
+
 .scoreboard-down {
   opacity: 0;
   transform: translateY(50%);
@@ -450,6 +512,10 @@ input, .opponents, .name, .radio-label, .radio, .menu-button {
 .gameboard td, .gameboard tr {
   -webkit-transition: all .4s linear;
   transition: all .4s linear; }
+
+.win-line {
+  -webkit-transition: width .2s linear;
+  transition: width .2s linear; }
 
 .results {
   transform: translateY(-50%); }

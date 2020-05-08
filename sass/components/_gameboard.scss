@@ -12,7 +12,23 @@ $grid-border: $border-width solid $dark-text-c;
   width: 33%;
 
   td {
+    color: rgba(217,217,217,0);
     box-sizing: content-box;
+    line-height: 30%;
+    text-align: center;
+
+    &:hover {
+      color: rgba(217,217,217,0.5);
+      cursor: pointer;
+    }
+
+    &.placed {
+      color: rgba(217,217,217,1);
+      &:hover {
+        color: rgba(217,217,217,1);
+        cursor: default;
+      }
+    }
   }
 
   tr:first-child, tr:last-child {
@@ -31,5 +47,65 @@ $grid-border: $border-width solid $dark-text-c;
   td:nth-child(2) {
     border-left: $grid-border;
     border-right: $grid-border;
+  }
+}
+
+.win-line {
+  background-color: $light-text-c;
+  height: calc(5px + 0.002 * (100vw - 20rem));
+  position: absolute;
+  transform-origin: top left;
+  width: 0;
+
+  &[class*='r'] {
+    left: -5%;
+    width: 110%;
+  }
+
+  &.r1 {
+    top: calc(100% / 6 - ((5px + 0.002 * (100vw - 20rem)) / 2));
+  }
+
+  &.r2 {
+    margin-top: calc((5px + 0.002 * (100vw - 20rem)) / -4);
+    top: 50%;
+  }
+
+  &.r3 {
+    bottom: calc(100% / 6 - (5px + 0.002 * (100vw - 20rem)));
+  }
+
+  &[class*='c'] {
+    top: -5%;
+    transform: rotate(90deg);
+    width: 110%;
+  }
+
+  &.c1 {
+    left: calc(100% / 6);
+  }
+
+  &.c2 {
+    left: 50%;
+    margin-left: calc((5px + 0.002 * (100vw - 20rem)) / 2);
+  }
+
+  &.c3 {
+    left: calc(100% / 6 * 5 + (5px + 0.002 * (100vw - 20rem)));
+  }
+
+  &[class*='d'] {
+    left: -1%;
+    width: 144.25%; //Pythagorean theorem
+  }
+
+  &.dltr {
+    top: -1%;
+    transform: rotate(45deg);
+  }
+
+  &.drtl {
+    bottom: -1%;
+    transform: rotate(-45deg);
   }
 }
