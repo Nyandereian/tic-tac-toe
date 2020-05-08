@@ -27,7 +27,6 @@ const GB = (() => {
   };
 
   const fadeOut = () => {
-    active = false;
     gameboard.style.opacity = 0;
     gameboard.style.transform = 'scale(0.7)';
     setTimeout(() => {
@@ -111,14 +110,16 @@ const GB = (() => {
     for(let [name, line] of Object.entries(lines)) {
       if(line[0].textContent && line[0].textContent == line[1].textContent && line[1].textContent == line[2].textContent) {
         turns = 0;
+        isGameOver = true;
+        active = false;
         winLine.classList.toggle(name);
         setTimeout(() => getResults(line[0].textContent), 1000);
         setTimeout(() => winLine.classList.toggle(name), 1500);
-        isGameOver = true;
       } else if(turns == 9) {
         turns = 0;
-        getResults('draw');
-        setTimeout(() => isGameOver = true, 600);
+        isGameOver = true;
+        active = false;
+        setTimeout(() => getResults('draw'), 600);
       }
     }
   };
